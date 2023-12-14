@@ -1,0 +1,345 @@
+@import url("http://fonts.googleapis.com/css?family=Roboto");
+
+:root {
+  --clr-primary-text: rgb(255, 255, 255);
+  --clr-primary-background: rgb(0, 0, 0);
+}
+
+/* zet box-sizing border box op alles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* kleurschema aanpassen */
+html {
+  /* dit kunnen we gebruiken om te kijken naar de gebruiker */
+  /* color-scheme: light dark; */
+  color-scheme: dark;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+  background: var(--clr-primary-background);
+}
+
+header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 50px;
+  height: 100px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-transform: uppercase;
+}
+
+.side-title {
+  transform: rotate(-90deg);
+  color: var(--clr-primary-text, #fff);
+  text-align: center;
+  /* Portfolio thumbnails - 14/18 AA */
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 128.571% */
+  text-transform: uppercase;
+  /* positioneer naar links midden */
+  position: fixed;
+  left: 0;
+  top: 50vh;
+}
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  top: -110px;
+}
+
+.hero-text-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-text {
+  width: 800px;
+  color: var(--White, #fff);
+  text-align: center;
+  /* H2 - 64/78 - AA */
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 78px; /* 121.875% */
+  text-transform: uppercase;
+}
+
+.hero-background-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  z-index: -1;
+}
+
+/* Hamburger menu css */
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+.navbar .menu-items {
+  display: flex;
+}
+
+.nav-container li {
+  list-style: none;
+}
+
+.nav-container a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 0.7rem;
+}
+
+.nav-container a:hover {
+  font-weight: bolder;
+}
+
+.nav-container {
+  display: block;
+}
+
+.nav-container .checkbox {
+  position: absolute;
+  display: block;
+  height: 32px;
+  width: 32px;
+  z-index: 5;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.nav-container .hamburger-lines {
+  display: block;
+  height: 26px;
+  width: 32px;
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.nav-container .hamburger-lines .line {
+  display: block;
+  height: 4px;
+  width: 100%;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.nav-container .hamburger-lines .line1 {
+  transform-origin: 0% 0%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line2 {
+  transition: transform 0.2s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line3 {
+  transform-origin: 0% 100%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.menu-items {
+  transform: translate(100vw);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.5s ease-in-out;
+  text-align: center;
+}
+
+.menu-items {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.498);
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.737) 0%,
+    rgba(0, 0, 0, 0.737) 25%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-items li {
+  margin-bottom: 1.2rem;
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.logo {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  font-size: 1.2rem;
+  color: #0e2431;
+}
+
+.nav-container input[type="checkbox"]:checked ~ .menu-items {
+  transform: translateX(0);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+  transform: rotate(45deg);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+  transform: scaleY(0);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+  transform: rotate(-45deg);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .logo {
+  display: none;
+}
+
+.red {
+  border: 1px solid red;
+}
+
+/* painting information */
+
+.painting-information {
+  width: 80vw;
+  min-width: 300px;
+  height: 150px;
+  margin: auto;
+  margin-top: 150px;
+  display: flex;
+}
+
+.painting-title {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 35%;
+  min-width: 300px;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.title-column-1 {
+  text-transform: uppercase;
+  opacity: 0.4;
+  width: 25%;
+  flex-grow: 1;
+}
+
+.title-column-2 {
+  text-transform: uppercase;
+  width: 75%;
+}
+
+.painting-description {
+  width: 50%;
+}
+
+footer {
+  display: flex;
+  width: 100%;
+  height: 24px;
+  padding-right: 0.147px;
+  justify-content: space-around;
+  align-items: center;
+  gap: 46px;
+  flex-shrink: 0;
+  margin-top: 100px;
+}
+
+.footer-left {
+  width: 300px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.footer-element {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-element img{
+  rotate: 120deg;
+}
+
+.red-container{
+  overflow:hidden;
+  height: 100vh;
+  margin: auto;
+}
+
+.red{
+  height: 200%;
+  /* height: 200px; */
+  aspect-ratio: 1 / 2;
+  border-radius: 50%;
+  margin: auto;
+  border: 1px solid red;
+}
